@@ -9,6 +9,6 @@ namespace Interfaces.Services
     public interface IGameService
     {
         Task<string> getAll(int id);
-
+        Task<string> GetSeasonIndex();
     }
 }

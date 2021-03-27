@@ -11,18 +11,15 @@ namespace gamenvy.Shared
     {
         [Inject] IGameService service { get; set; }
 
-        private int test { get; set; } = 1;
-
         private string strin;
 
         protected async override Task OnInitializedAsync()
         {
             strin = await setGames();
         }
-
         async Task<string> setGames()
         {
-            return await service.getAll(3);
+            return await service.GetSeasonIndex();
         }
 
 

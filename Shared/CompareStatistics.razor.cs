@@ -7,6 +7,6 @@ namespace gamenvy.Shared
 {
     public partial class CompareStatistics
     {
-        
+
     }
 }
