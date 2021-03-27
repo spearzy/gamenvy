@@ -5,3 +5,14 @@
 /.vs/gamenvy
 /bin/*
 /obj/*
+/Interfaces/bin/*
+/Interfaces/obj/*
+/Models/bin/*
+/Models/obj/*
+/Services/bin/*
+/Services/obj/*
+/Repositories/bin/*
+/Repositories/obj/*
+/Tests/bin/*
+/Tests/obj/*
+/gamenvy.csproj.user
