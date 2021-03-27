@@ -31,6 +31,7 @@ namespace gamenvy
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddScoped<IGameService, GameService>();
+            services.AddScoped<IRiotService, RiotService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
