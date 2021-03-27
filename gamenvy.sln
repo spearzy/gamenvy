@@ -12,6 +12,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{BB4253A0-01C4-462D-B475-C6A882BA7094}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DTOs", "DTOs", "{9BF08C4D-D9C6-4A7F-9892-C977022A305C}"
+	ProjectSection(SolutionItems) = preProject
+		DiabloDTO.cs = DiabloDTO.cs
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{CD85EC44-8E9A-4CD5-B873-E32E4385182B}"
 EndProject

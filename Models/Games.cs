@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Interfaces.Services
+namespace Models
 {
-    public interface IGameService
+    public class Games
     {
-        Task<string> getAll(int id);
-
+        public int GameID { get; set; }
+        public string GameName { get; set; }
     }
 }
