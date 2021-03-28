@@ -22,5 +22,7 @@ namespace Repositories
         }
 
         public DbSet<AppUser> AppUser { get; set; }
+        public DbSet<Games> Games { get; set; }
+        public DbSet<Image> Image { get; set; }
     }
 }
