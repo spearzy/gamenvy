@@ -13,13 +13,14 @@ namespace gamenvy.Shared
 
         private string strin;
 
-        protected async override Task OnInitializedAsync()
+        protected override void OnInitialized()
         {
-            strin = await setGames();
+            strin = "Service under maintenance";
         }
         async Task<string> setGames()
         {
-            return await service.GetSeasonIndex();
+            return null;
+            //return await service.GetSeasonIndex();
         }
 
 

@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace Services
 {
 
-    public class GameService : IGameService
+    public class BattleNetService : IGameService
     {
         public async Task<string> getAll(int id)
         {

@@ -30,7 +30,7 @@ namespace gamenvy
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddScoped<IGameService, GameService>();
+            services.AddScoped<IGameService, BattleNetService>();
             services.AddScoped<IRiotService, RiotService>();
         }
 
