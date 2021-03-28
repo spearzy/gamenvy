@@ -13,10 +13,10 @@ namespace gamenvy.Shared
 
         private string strin;
 
-        protected override void OnInitialized()
-        {
-            strin = "Service under maintenance";
-        }
+        //protected override void OnInitialized()
+        //{
+        //    strin = "Service under maintenance";
+        //}
         async Task<string> setGames()
         {
             return null;

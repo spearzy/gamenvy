@@ -13,10 +13,10 @@ namespace gamenvy.Shared
         private string tftres;
         private string inputUsername;
 
-        protected async override Task OnInitializedAsync()
-        {
-            //tftres = await riotService.getTFTStats();
-        }
+        //protected async override Task OnInitializedAsync()
+        //{
+        //    //tftres = await riotService.getTFTStats();
+        //}
 
         async Task GetTFTData()
         {
