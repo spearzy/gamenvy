@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Models;
 using Repositories;
+using Repositories.SeedData;
 using Services;
 using System.Security.Claims;
 
@@ -29,6 +30,7 @@ namespace gamenvy
             services.AddDbContext<GamEnvyDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.Configure<IdentityOptions>(options => options.ClaimsIdentity.UserIdClaimType = ClaimTypes.NameIdentifier);
             services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<GamEnvyDbContext>()
                 .AddDefaultTokenProviders();
 
@@ -45,12 +47,13 @@ namespace gamenvy
             using (var serviceScope = serviceScopeFactory.CreateScope())
             {
                 var signInManager = serviceScope.ServiceProvider.GetRequiredService<SignInManager<AppUser>>().UserManager;
+                var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
                 var dbContext = serviceScope.ServiceProvider.GetService<GamEnvyDbContext>();
 
                 dbContext.Database.EnsureDeleted();
                 dbContext.Database.EnsureCreated();
-
-                Repositories.SeedData.DevelopmentUsers.SeedData(signInManager);
+                Roles.SeedRoles(roleManager, dbContext).GetAwaiter().GetResult();
+                DevelopmentUsers.SeedData(signInManager);
             }
 
             if (env.IsDevelopment())

@@ -11,16 +11,35 @@ namespace Repositories.SeedData
         {
             IdentityResult result;
 
-            var user = new AppUser
+            var admin = new AppUser
             {
                FirstName = "Admin",
-               UserName = "test@gamenvyemail.com",
+               UserName = "admin@gamenvyemail.com",
                LastName = "User",
-               Email = "test@gamenvyemail.com",
+               Email = "admin@gamenvyemail.com",
                EmailConfirmed = true,
             };
 
+            result = userManager.CreateAsync(admin, "Passw0rd!").Result;
+            if(result.Succeeded)
+            {
+                var result1 = userManager.AddToRoleAsync(admin, "Administrator").Result;
+            }
+
+            var user = new AppUser
+            {
+                FirstName = "Normal",
+                UserName = "user@gamenvyemail.com",
+                LastName = "User",
+                Email = "user@gamenvyemail.com",
+                EmailConfirmed = true,
+            };
+
             result = userManager.CreateAsync(user, "Passw0rd!").Result;
+            if (result.Succeeded)
+            {
+                var result1 = userManager.AddToRoleAsync(user, "User").Result;
+            }
 
         }
     }
