@@ -50,8 +50,8 @@ namespace gamenvy
                 var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
                 var dbContext = serviceScope.ServiceProvider.GetService<GamEnvyDbContext>();
 
-                dbContext.Database.EnsureDeleted();
-                dbContext.Database.EnsureCreated();
+                dbContext?.Database.EnsureDeleted();
+                dbContext?.Database.EnsureCreated();
                 Roles.SeedRoles(roleManager, dbContext).GetAwaiter().GetResult();
                 DevelopmentUsers.SeedData(signInManager);
             }
