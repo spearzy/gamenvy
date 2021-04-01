@@ -1,11 +1,16 @@
 @import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 300 !important;
 }
 
 a, .btn-link {
-    color: #0366d6;
+    color: white;
+    text-decoration: none;
 }
 
 .btn-primary {
@@ -48,3 +53,7 @@ a, .btn-link {
         right: 0.75rem;
         top: 0.5rem;
     }
+
+.midnight-blue {
+    background-color: #143866;
+}

@@ -52,6 +52,7 @@
     <Folder Include="Areas\Identity\Data\" />
     <Folder Include="Data\" />
     <Folder Include="Tests\" />
+    <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
 </Project>
