@@ -11,18 +11,22 @@
     <Compile Remove="Models\**" />
     <Compile Remove="Repositories\**" />
     <Compile Remove="Services\**" />
+    <Compile Remove="SharedObjects\**" />
     <Content Remove="Interfaces\**" />
     <Content Remove="Models\**" />
     <Content Remove="Repositories\**" />
     <Content Remove="Services\**" />
+    <Content Remove="SharedObjects\**" />
     <EmbeddedResource Remove="Interfaces\**" />
     <EmbeddedResource Remove="Models\**" />
     <EmbeddedResource Remove="Repositories\**" />
     <EmbeddedResource Remove="Services\**" />
+    <EmbeddedResource Remove="SharedObjects\**" />
     <None Remove="Interfaces\**" />
     <None Remove="Models\**" />
     <None Remove="Repositories\**" />
     <None Remove="Services\**" />
+    <None Remove="SharedObjects\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,6 +48,7 @@
 
   <ItemGroup>
     <ProjectReference Include="Interfaces\Interfaces.csproj" />
+    <ProjectReference Include="SharedObjects\SharedObjects.csproj" />
     <ProjectReference Include="Repositories\Repositories.csproj" />
     <ProjectReference Include="Services\Services.csproj" />
   </ItemGroup>

@@ -1,0 +1,17 @@
+﻿<h3>Valorant characters</h3>
+
+@if (CharacterList != null)
+{
+    foreach (var character in CharacterList)
+    {
+        <div class="row">
+            <div class="col-6">
+                @character.Name
+            </div>
+        </div>
+    }
+}
+else
+{
+    <h4>No characters found</h4>
+}

@@ -5,13 +5,16 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Collections.Generic;
+using SharedObjects.DTOs;
+using SharedObjects.APIContexts;
+using Microsoft.AspNetCore.Components;
 
 namespace Services
 {
     public class RiotService : IRiotService
     {
-        HttpClient client;
 
+        HttpClient client;
         string apiKey = "";
         string requestUrl = "https://euw1.api.riotgames.com/tft/summoner/v1/summoners/by-name/";
         string secondRequestUrl = "https://europe.api.riotgames.com/tft/match/v1/matches/by-puuid/";
@@ -56,6 +59,25 @@ namespace Services
             return "First call didn't work";
         }
 
+        public async Task<List<ValorantCharacterDto>> GetValorantCharacters()
+        {
+            string url = ValorantAPI.GetContents();
+            client = new HttpClient();
 
+            client.DefaultRequestHeaders.Add("X-Riot-Token", apiKey);
+            HttpResponseMessage response = await client.GetAsync(url);
+            if(response.IsSuccessStatusCode)
+            {
+                JArray participants = JObject.Parse(response.Content.ReadAsStringAsync().Result).Value<JArray>("characters");
+
+                List<ValorantCharacterDto> Characters = participants.Select(x => new ValorantCharacterDto
+                {
+                    Id = (string)x["id"],
+                    Name = (string)x["name"]
+                }).ToList();
+                return Characters.Where(x => x.Name != "Null UI Data!").ToList();
+            }
+            return new List<ValorantCharacterDto>();
+        }
     }
 }
