@@ -8,14 +8,19 @@ using System.Collections.Generic;
 using SharedObjects.DTOs;
 using SharedObjects.APIContexts;
 using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Configuration;
 
 namespace Services
 {
     public class RiotService : IRiotService
     {
+        public RiotService(IConfiguration config)
+        {
+            apiKey = config["APIKeys:RiotApiKey"];
+        }
 
         HttpClient client;
-        string apiKey = "";
+        string apiKey;
         string requestUrl = "https://euw1.api.riotgames.com/tft/summoner/v1/summoners/by-name/";
         string secondRequestUrl = "https://europe.api.riotgames.com/tft/match/v1/matches/by-puuid/";
         string thirdRequestUrl = "https://europe.api.riotgames.com/tft/match/v1/matches/";

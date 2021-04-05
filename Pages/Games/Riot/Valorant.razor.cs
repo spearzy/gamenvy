@@ -15,7 +15,7 @@ namespace gamenvy.Pages.Games.Riot
 
         protected async override Task OnInitializedAsync()
         {
-        //    CharacterList = await RiotService.GetValorantCharacters();
+            CharacterList = await RiotService.GetValorantCharacters();
         }
 
     }
