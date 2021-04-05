@@ -1,8 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-	  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 	  <TargetFramework>net5.0</TargetFramework>
+	  <UserSecretsId>7c45ac87-3a39-4814-91b4-8b9401a59f8c</UserSecretsId>
+	  <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 	  <Nullable>warnings</Nullable>
   </PropertyGroup>
 
@@ -43,6 +44,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="5.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
   </ItemGroup>
 
