@@ -1,17 +1,26 @@
-﻿<h3>Valorant characters</h3>
-
-@if (CharacterList != null)
-{
-    foreach (var character in CharacterList)
-    {
-        <div class="row">
-            <div class="col-6">
-                @character.Name
-            </div>
+﻿@page "/valorant"
+    <title>Game Envy: Valorant</title>
+    <div class="row h-100">
+        <div class="col-5">
+            <img style="width: 15%;" class="float-right" src="/media/riot/valorant/valorant-logo.png" alt="Valorant-Logo" />
         </div>
+        <div class="col-7" style="margin-top:auto;margin-bottom:auto;">
+            <h1>Valorant</h1>
+        </div>
+    </div>
+
+    @if (CharacterList != null)
+    {
+        foreach (var character in CharacterList)
+        {
+            <div class="row">
+                <div class="col-6">
+                    @character.Name
+                </div>
+            </div>
+        }
     }
-}
-else
-{
-    <h4>Loading</h4>
-}
+    else
+    {
+        <h4>Loading</h4>
+    }

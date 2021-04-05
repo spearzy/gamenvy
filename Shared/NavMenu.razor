@@ -8,9 +8,21 @@
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
     <ul class="nav flex-column">
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="/games" Match="NavLinkMatch.All">
+            <NavLink class="nav-link" Match="NavLinkMatch.All" @onclick="()=>expandGames = !expandGames">
                 <span class="fa fa-gamepad mr-3" aria-hidden="true"></span> Games
             </NavLink>
+            @if (expandGames)
+            {
+                <NavLink class="expand-menu" href="/diablo3">
+                    <span>Diablo III</span>
+                </NavLink>
+                <NavLink class="" href="/tft">
+                    <span>Team Fight Tactics</span>
+                </NavLink>
+                <NavLink class="" href="/valorant">
+                    <span>Valorant</span>
+                </NavLink>
+            }
         </li>
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="/riotgames" Match="NavLinkMatch.All">
@@ -29,6 +41,7 @@
 
 @code {
     private bool collapseNavMenu = true;
+    private bool expandGames = false;
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 

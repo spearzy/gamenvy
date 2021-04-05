@@ -13,21 +13,25 @@
     <Compile Remove="Repositories\**" />
     <Compile Remove="Services\**" />
     <Compile Remove="SharedObjects\**" />
+    <Compile Remove="Tests\**" />
     <Content Remove="Interfaces\**" />
     <Content Remove="Models\**" />
     <Content Remove="Repositories\**" />
     <Content Remove="Services\**" />
     <Content Remove="SharedObjects\**" />
+    <Content Remove="Tests\**" />
     <EmbeddedResource Remove="Interfaces\**" />
     <EmbeddedResource Remove="Models\**" />
     <EmbeddedResource Remove="Repositories\**" />
     <EmbeddedResource Remove="Services\**" />
     <EmbeddedResource Remove="SharedObjects\**" />
+    <EmbeddedResource Remove="Tests\**" />
     <None Remove="Interfaces\**" />
     <None Remove="Models\**" />
     <None Remove="Repositories\**" />
     <None Remove="Services\**" />
     <None Remove="SharedObjects\**" />
+    <None Remove="Tests\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -58,8 +62,8 @@
   <ItemGroup>
     <Folder Include="Areas\Identity\Data\" />
     <Folder Include="Data\" />
-    <Folder Include="Tests\" />
     <Folder Include="wwwroot\js\" />
+    <Folder Include="wwwroot\media\riot\valorant\" />
   </ItemGroup>
 
 </Project>
