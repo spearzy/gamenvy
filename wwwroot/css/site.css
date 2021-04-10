@@ -58,3 +58,12 @@ a, .btn-link {
 .midnight-blue {
     background-color: #1F263C;
 }
+
+.width-height-25 {
+    max-width: 25px;
+    max-height: 25px;
+}
+
+.left-margin-1rem {
+    margin-left: 1rem;
+}
