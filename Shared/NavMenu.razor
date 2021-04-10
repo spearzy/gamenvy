@@ -13,17 +13,21 @@
             </NavLink>
             @if (expandGames)
             {
-        <NavLink class="expand-menu nav-link left-margin-1rem" href="/diablo3">
-            <img class="width-height-25" src="/media/blizzard/diablo/diablo-logo.png" aria-hidden="true" />
-            <span class="left-margin-1rem">Diablo III</span>
-        </NavLink>
-        <NavLink class="expand-menu nav-link left-margin-1rem" href="/tft">
-            <img class="width-height-25" src="/media/riot/tft/tft-logo.png" aria-hidden="true" />
-            <span class="left-margin-1rem">Team Fight Tactics</span>
-        </NavLink>
                 <NavLink class="expand-menu nav-link left-margin-1rem" href="/valorant">
                     <img class="width-height-25" src="/media/riot/valorant/valorant-logo.png" aria-hidden="true" />
                     <span class="left-margin-1rem">Valorant</span>
+                </NavLink>
+                <NavLink class="expand-menu nav-link left-margin-1rem" href="/diablo3">
+                    <img class="width-height-25" src="/media/blizzard/diablo/diablo-logo.png" aria-hidden="true" />
+                    <span class="left-margin-1rem">Diablo III</span>
+                </NavLink>
+                <NavLink class="expand-menu nav-link left-margin-1rem" href="/tft">
+                    <img class="width-height-25" src="/media/riot/tft/tft-logo.png" aria-hidden="true" />
+                    <span class="left-margin-1rem">Team Fight Tactics</span>
+                </NavLink>
+                <NavLink class="expand-menu nav-link left-margin-1rem" href="/lol">
+                    <img class="width-height-25" src="/media/riot/lol/lol.png" aria-hidden="true" />
+                    <span class="left-margin-1rem">League of Legends</span>
                 </NavLink>
             }
         </li>
@@ -33,11 +37,11 @@
             </NavLink>
         </li>
         <AuthorizeView Roles="Administrator">
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="/manage" Match="NavLinkMatch.All">
-                <span class="fa fa-user-cog mr-3" aria-hidden="true"></span> Admin Panel
-            </NavLink>
-        </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="/manage" Match="NavLinkMatch.All">
+                    <span class="fa fa-user-cog mr-3" aria-hidden="true"></span> Admin Panel
+                </NavLink>
+            </li>
         </AuthorizeView>
     </ul>
 </div>
