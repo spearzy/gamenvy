@@ -67,3 +67,44 @@ a, .btn-link {
 .left-margin-1rem {
     margin-left: 1rem;
 }
+
+.card {
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+    transition: transform .2s;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.image-blur {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+}
+
+.card-img-top {
+    height: 17vw;
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+.bottom-padding-20 {
+    padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+    .card-img-top {
+        height: 60vw;
+        -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

@@ -1,5 +1,16 @@
-﻿@page "/"
-<h1>Game Envy</h1>
+﻿@inject NavigationManager navManager;
+@page "/"
+
+@code {
+    string lol = "/lol";
+    string tft = "/tft";
+    string valorant = "/valorant";
+    string diablo3 = "/diablo3";
+
+    void redirect(string url) => navManager.NavigateTo(url);
+} 
+
+<h1 class="text-center">Game Envy</h1>
 
 <AuthorizeView Roles="Administrator">
         You are an authorized admin
@@ -8,4 +19,45 @@
 <AuthorizeView Roles="User">
         You are an authorized user
 </AuthorizeView>
-
+<hr class="bg-white" />
+<div class="container-fluid">
+    <h1 class="bottom-padding-20">Available Game Data</h1>
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-12">
+            <div class="card midnight-blue cursor-pointer" @onclick="() => redirect(valorant)">
+                <img class="card-img-top" src="/media/riot/valorant/valorant-logo.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Valorant</h5>
+                    <p class="card-text">Access player data, character info and more</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-12">
+            <div class="card midnight-blue cursor-pointer" @onclick="() => redirect(diablo3)">
+                <img class="card-img-top" src="/media/blizzard/diablo/diablo-logo.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Diablo III</h5>
+                    <p class="card-text">Access player data, character info and more</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-12">
+            <div class="card midnight-blue cursor-pointer" @onclick="() => redirect(tft)">
+                <img class="card-img-top" src="/media/riot/tft/tft-main.svg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Team Fight Tactics</h5>
+                    <p class="card-text">Access player data, character info and more</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-12">
+            <div class="card midnight-blue cursor-pointer" @onclick="() => redirect(lol)">
+                <img class="card-img-top" src="/media/riot/lol/lol.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Leage Of Legends</h5>
+                    <p class="card-text">Access player data, character info and more</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
